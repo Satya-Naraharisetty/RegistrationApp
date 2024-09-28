@@ -12,7 +12,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet("/ServletJDBC")
-public class HelloServlet extends HttpServlet {
+public class FirstServlet extends HttpServlet {
 
 
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -32,14 +32,14 @@ public class HelloServlet extends HttpServlet {
             Connection connect = DriverManager.getConnection(url, user, password);
 
 
-            PreparedStatement pstm = connect.prepareStatement("Insert into RegistrationDetails(SName, SCity, SAge, SEmail, SPass) values(?,?,?,?,?)");
-            pstm.setString(1, name);
-            pstm.setString(2, city);
-            pstm.setString(3, age);
-            pstm.setString(4, email);
-            pstm.setString(5, pswd);
+            PreparedStatement pstmt = connect.prepareStatement("Insert into RegistrationDetails(SName, SCity, SAge, SEmail, SPass) values(?,?,?,?,?)");
+            pstmt.setString(1, name);
+            pstmt.setString(2, city);
+            pstmt.setString(3, age);
+            pstmt.setString(4, email);
+            pstmt.setString(5, pswd);
 
-            int rowAffected = pstm.executeUpdate();
+            int rowAffected = pstmt.executeUpdate();
             PrintWriter result = response.getWriter();
             if(rowAffected > 0)
             {
@@ -49,7 +49,7 @@ public class HelloServlet extends HttpServlet {
                 result.println("Insertion Failed");
             }
             connect.close();
-            pstm.close();
+            pstmt.close();
         }
         catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
