@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>form</title>
+    <title>Registration Form</title>
 </head>
 <body>
-<h1><%= "Fill the form" %>
+<h1><%= "Fill up the form" %>
 </h1>
 <br/>
 <form action="./ServletJDBC" method="post">
