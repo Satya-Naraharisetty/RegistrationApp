@@ -31,7 +31,7 @@ public class SecondServlet extends HttpServlet {
 
 //        HttpSession session = request.getSession(false);
 //        String name = (String) session.getAttribute("UName");
-//        int age = Integer.parseInt(request.getParameter("age"));
+//        int age = Integer.parseInt(request.getParameter("Uage"));
 //        String city = (String) session.getAttribute("UCity");
 //        String email = (String) session.getAttribute("UEmail");
 //
