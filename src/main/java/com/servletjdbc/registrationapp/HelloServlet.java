@@ -66,8 +66,8 @@ public class HelloServlet extends HttpServlet {
         session.setAttribute("UAge", age);
         session.setAttribute("UCity", city);
         session.setAttribute("UEmail", email);
-//        RequestDispatch.include(request, response);
-        RequestDispatch.forward(request, response);
+        RequestDispatch.include(request, response);
+//        RequestDispatch.forward(request, response);
     }
 
 }
